@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brooke Hogan | Marketing Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Heylena';
+      src: url('Heylena.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      /* — Midnight Garden palette (Dunn-Edwards inspired) — */
+      --terra-rosa:     #BD7268;
+      --skipping-stone: #86A2AD;
+      --midnight-olive: #454C3C;
+      --honey-glow:     #D9A95F;
+
+      /* — Functional roles, light body — */
+      --cream:        #F2EEE6;
+      --cream-dark:   #E7E1D5;
+      --cream-mid:    #DDD5CC;
+      --white:        #FFFFFF;
+      --text:         #54554A;
+      --text-light:   #8C8B7E;
+      --heading:      #454C3C;
+      --accent:       var(--terra-rosa);
+      --accent-light: #EAD9D5;
+      --border:       #DDD5CC;
+      --navy:         var(--skipping-stone);
+      --navy-dark:    #6C8995;
+
+      /* — Deep hero band ("Midnight Garden" ground) — */
+      --hero-bg:         #3A4030;
+      --hero-heading:    #EDE8DD;
+      --hero-text:       #C7C7B9;
+      --hero-text-light: #A8AC9B;
+      --hero-accent:     #D08D82;
+      --hero-navy:       #93AFB9;
+      --hero-border:     #4F5640;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    /* ─── NAVIGATION ─────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(58,64,48,0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--hero-border);
+      transition: box-shadow 0.3s;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .nav-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--hero-heading);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--hero-text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--hero-heading); }
+    .nav-resume {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--hero-navy);
+      text-decoration: none;
+      border: 1.5px solid var(--hero-navy);
+      padding: 0.45rem 1.1rem;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav-resume:hover { background: var(--hero-navy); color: var(--hero-bg); }
+
+    /* hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 22px;
+      height: 15px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      height: 1.5px;
+      background: var(--hero-heading);
+      transition: all 0.25s;
+      transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.75px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.75px) rotate(-45deg); }
+
+    .nav-mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(58,64,48,0.97);
+      border-top: 1px solid var(--hero-border);
+      padding: 1.25rem 2rem 1.5rem;
+      gap: 1.25rem;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--hero-text-light);
+      text-decoration: none;
+    }
+    .nav-mobile-menu .nav-resume {
+      align-self: flex-start;
+      margin-top: 0.25rem;
+    }
+
+    /* ─── SHARED ─────────────────────────────────────────────── */
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+    .section-heading {
+      font-family: 'Italiana', serif;
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 400;
+      font-style: normal;
+      color: var(--heading);
+      line-height: 1.08;
+    }
+    .btn-primary {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--navy);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.875rem 2rem;
+      border-radius: 50px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--navy-dark); transform: translateY(-1px); }
+    .btn-secondary {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      padding: 0.875rem 2rem;
+      border: 1.5px solid var(--navy);
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: var(--navy); color: var(--white); transform: translateY(-1px); }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    #hero {
+      padding: 5rem 2rem;
+      min-height: calc(100vh - 64px);
+      display: flex;
+      align-items: center;
+      background: var(--hero-bg);
+    }
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 460px;
+      gap: 5rem;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--hero-heading);
+      margin-bottom: 1rem;
+    }
+    h1.hero-name {
+      font-family: 'Italiana', serif;
+      font-size: clamp(3.5rem, 7vw, 5.75rem);
+      font-weight: 500;
+      color: var(--hero-heading);
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-subtitle {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--hero-text-light);
+      margin-bottom: 1.5rem;
+    }
+    .hero-divider {
+      width: 48px;
+      height: 1.5px;
+      background: var(--hero-accent);
+      margin-bottom: 1.5rem;
+    }
+    .hero-proof {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--hero-text);
+      max-width: 500px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    #hero .btn-primary {
+      background: var(--hero-accent);
+      color: var(--hero-bg);
+    }
+    #hero .btn-primary:hover { background: #DCA199; transform: translateY(-1px); }
+    #hero .btn-secondary {
+      color: var(--hero-navy);
+      border: 1.5px solid var(--hero-navy);
+    }
+    #hero .btn-secondary:hover { background: var(--hero-navy); color: var(--hero-bg); transform: translateY(-1px); }
+
+    /* compact proof-point row — surfaces the strongest numbers above the fold */
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--hero-border);
+    }
+    .hero-stat-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+      font-weight: 600;
+      color: var(--hero-navy);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .hero-stat-desc {
+      font-size: 0.72rem;
+      color: var(--hero-text-light);
+      line-height: 1.4;
+      max-width: 16ch;
+    }
+    @media (max-width: 600px) {
+      .hero-stats { gap: 1.5rem; margin-top: 2.25rem; padding-top: 1.5rem; }
+    }
+
+    /* headshot — placed like a printed photo, not a templated frame */
+    .hero-photo-wrap { position: relative; }
+    .hero-photo-frame {
+      position: relative;
+      z-index: 1;
+      transform: rotate(-2.25deg);
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .hero-photo-wrap:hover .hero-photo-frame { transform: rotate(-0.5deg); }
+    .hero-photo {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center top;
+      background: var(--white);
+      border: 10px solid var(--white);
+      box-shadow:
+        0 30px 60px -20px rgba(42, 40, 37, 0.28),
+        0 10px 24px -10px rgba(42, 40, 37, 0.16);
+    }
+    .hero-photo-caption {
+      margin-top: 1rem;
+      margin-left: 0.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--hero-heading);
+      transform: rotate(-1.5deg);
+    }
+
+    /* ─── ABOUT ──────────────────────────────────────────────── */
+    #about {
+      background: var(--cream-dark);
+      padding: 7rem 2rem;
+    }
+    .about-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-sticky {
+      position: sticky;
+      top: 88px;
+    }
+    .about-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    .about-body p + p { margin-top: 1.25rem; }
+    .about-details {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .detail-row {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+    .detail-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      min-width: 80px;
+      padding-top: 2px;
+    }
+    .detail-value { color: var(--text); line-height: 1.5; }
+
+    /* ─── SKILLS ─────────────────────────────────────────────── */
+    #skills {
+      background: var(--white);
+      padding: 7rem 2rem;
+    }
+    .skills-inner { max-width: 1200px; margin: 0 auto; }
+
+    /* Editorial capability list — static rows, not buttons */
+    .skills-list {
+      margin-top: 3.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .skill-row {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2.5rem;
+      padding: 2.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .skill-row-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.1rem;
+    }
+    .skill-index {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      color: var(--text-light);
+      padding-top: 0.55rem;
+    }
+    .skill-row-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .skill-row-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--heading);
+      line-height: 1.15;
+    }
+    .skill-row-accent {
+      width: 30px;
+      height: 2px;
+    }
+    .skill-row:nth-child(1) .skill-row-accent { background: var(--alexandrite); }
+    .skill-row:nth-child(2) .skill-row-accent { background: var(--tea-rose); }
+    .skill-row:nth-child(3) .skill-row-accent { background: var(--amaranth); }
+    .skill-row:nth-child(4) .skill-row-accent { background: var(--marina); }
+
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      align-self: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.97rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.8;
+    }
+    .skill-item { white-space: nowrap; }
+    .skill-item:not(:last-child)::after {
+      content: "\2022";
+      display: inline-block;
+      margin: 0 0.8rem;
+      color: var(--border);
+      font-size: 0.65rem;
+      vertical-align: middle;
+    }
+    .skill-item.tool {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .tool-logo {
+      width: 15px;
+      height: 15px;
+      border-radius: 3px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .tool-dropdown { position: relative; display: inline-flex; }
+    .tool-dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.97rem;
+      font-weight: 400;
+      color: var(--text);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      line-height: 1.8;
+      transition: color 0.2s;
+    }
+    .tool-dropdown-toggle:hover { color: var(--heading); }
+    .tool-dropdown-toggle:hover .tool-dropdown-caret {
+      color: var(--accent);
+      transform: translateY(1px);
+    }
+    .tool-dropdown-caret {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      font-size: 0.6rem;
+      line-height: 1;
+      color: var(--navy);
+      transition: transform 0.2s, background 0.2s, color 0.2s;
+      margin-left: 0.15rem;
+    }
+    .tool-dropdown.open .tool-dropdown-caret {
+      transform: rotate(180deg);
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+    .tool-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.6rem);
+      left: 0;
+      z-index: 20;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 18px 40px -16px rgba(42, 40, 37, 0.22);
+      padding: 0.6rem;
+      min-width: 168px;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .tool-dropdown.open .tool-dropdown-panel { display: flex; }
+    .tool-dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.84rem;
+      color: var(--text);
+      padding: 0.4rem 0.55rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .tool-dropdown-item:hover { background: var(--cream-dark); }
+
+    /* ─── FEATURED WORK ──────────────────────────────────────── */
+    #work {
+      background: var(--cream);
+      padding: 7rem 2rem;
+    }
+    .work-inner { max-width: 1200px; margin: 0 auto; }
+    .work-heading-row {
+      margin-bottom: 3rem;
+    }
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      background: var(--border);
+    }
+    .project-card {
+      background: var(--white);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      overflow: hidden;
+      border-radius: 20px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 40px rgba(42,37,33,0.12);
+      z-index: 1;
+      position: relative;
+    }
+
+    /* Closing card: spans full grid width, image + copy side-by-side
+       (used for the last item in an odd-numbered grid so there's no empty cell) */
+    .project-card-feature {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: stretch;
+    }
+    .project-card-feature .card-img-wrap {
+      aspect-ratio: auto;
+      height: 100%;
+      min-height: 280px;
+    }
+    .project-card-feature .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.5rem 3rem;
+    }
+    .project-card-feature .card-title { font-size: 1.65rem; }
+    .project-card-feature .card-summary { font-size: 0.95rem; max-width: 38ch; }
+    @media (max-width: 720px) {
+      .project-card-feature { grid-template-columns: 1fr; }
+      .project-card-feature .card-img-wrap { min-height: 220px; }
+    }
+
+    /* card image: contain so slide text is never cropped */
+    .card-img-wrap {
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      background: var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 0.5rem;
+      transition: transform 0.4s;
+    }
+    .project-card:hover .card-img-wrap img { transform: scale(1.03); }
+
+    .card-body { padding: 1.75rem 2rem 2rem; }
+    .card-category {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 0.625rem;
+      line-height: 1.15;
+    }
+    .card-summary {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .card-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+    .pill {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--heading);
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+    }
+    .card-cta {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.2s;
+    }
+    .project-card:hover .card-cta { gap: 0.7rem; }
+
+    /* ─── RESULTS STRIP ──────────────────────────────────────── */
+    #results {
+      background: var(--navy);
+      padding: 5rem 2rem;
+    }
+    .results-inner { max-width: 1200px; margin: 0 auto; }
+    .results-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+    .stat-item {
+      text-align: center;
+      padding: 0 1.5rem;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.25rem, 3.5vw, 3.25rem);
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.625rem;
+    }
+    .stat-desc {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.5;
+    }
+
+    /* ─── CASE STUDIES ───────────────────────────────────────── */
+    .case-study {
+      padding: 7rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .case-study:nth-child(even) { background: var(--white); }
+    .case-study:nth-child(odd)  { background: var(--cream); }
+    .cs-inner { max-width: 1200px; margin: 0 auto; }
+
+    .cs-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--accent-light);
+      margin-bottom: 0.5rem;
+    }
+    .cs-category {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+    }
+    .cs-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+      font-weight: 500;
+      color: var(--heading);
+      line-height: 1.2;
+      max-width: 780px;
+      margin-bottom: 2rem;
+    }
+    .cs-meta {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .cs-meta-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+    .cs-meta-value { font-size: 0.82rem; color: var(--text); }
+
+    /* Hero image: contain, never crop slides */
+    .cs-hero-img-wrap {
+      width: 100%;
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 3.5rem;
+      overflow: hidden;
+    }
+    .cs-hero-img-wrap img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Floating preview graphic beside the case study intro */
+    .cs-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+    .cs-header-text { flex: 1; min-width: 0; }
+    .cs-float-graphic {
+      flex-shrink: 0;
+      width: 200px;
+      display: flex;
+      justify-content: center;
+      padding-top: 0.5rem;
+    }
+    .cs-float-graphic img {
+      width: 100%;
+      height: auto;
+      display: block;
+      animation: cs-float 6s ease-in-out infinite;
+      transition: transform 0.5s ease;
+    }
+    .cs-float-graphic:hover img {
+      animation-play-state: paused;
+      transform: translateY(-14px) rotate(1.5deg) scale(1.04);
+    }
+    @keyframes cs-float {
+      0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+      50% { transform: translateY(-10px) rotate(1deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cs-float-graphic img { animation: none; }
+    }
+    @media (max-width: 860px) {
+      .cs-header-row { flex-direction: column; align-items: stretch; }
+      .cs-float-graphic { width: 150px; align-self: center; padding-top: 1.5rem; }
+    }
+
+    .cs-body {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 4rem;
+      align-items: start;
+    }
+    .cs-text-block { margin-bottom: 2.25rem; }
+    .cs-block-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .cs-block-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .cs-block-text {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    /* ── Visual gallery ──────────────────────────────────────── */
+    /* Generic gallery container */
+    .cs-visuals {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+    }
+
+    /* Base image cell: contain, preserve text */
+    .cs-img-cell {
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cs-img-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* 16:9 cells (most slides) */
+    .cs-img-cell.ratio-16-9 { aspect-ratio: 16/9; }
+
+    /* Near-square cell (ruth app wireframe) */
+    .cs-img-cell.ratio-sq { aspect-ratio: 1/1; }
+
+    /* Full-width spanning cell */
+    .cs-img-cell.span2 { grid-column: span 2; }
+
+    /* Very wide image: give it a wider aspect ratio */
+    .cs-img-cell.ratio-wide { aspect-ratio: 21/9; }
+
+    /* sidebar */
+    .cs-sidebar { position: sticky; top: 88px; }
+    .results-box {
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .results-box-title {
+      font-family: 'Italiana', serif;
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+    .result-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding: 1.25rem 0;
+    }
+    .result-row + .result-row { border-top: 1px solid var(--cream-mid); }
+    .r-key {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+    .r-val {
+      font-family: 'Italiana', serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--heading);
+      line-height: 1.2;
+    }
+    .takeaway-box {
+      background: var(--navy);
+      padding: 1.75rem;
+      border-radius: 20px;
+    }
+    .takeaway-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 0.75rem;
+    }
+    .takeaway-text {
+      font-size: 0.87rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.82);
+    }
+
+    /* ─── PDF EMBED (collapsible) ──────────────────────────────── */
+    .pdf-embed-wrap { margin-top: 2.5rem; }
+    .pdf-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--white);
+      border: 1.5px solid var(--navy);
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .pdf-toggle:hover { background: var(--navy); color: var(--white); }
+    .pdf-toggle-icon {
+      display: inline-block;
+      transition: transform 0.3s ease;
+      font-size: 0.8rem;
+      line-height: 1;
+    }
+    .pdf-embed-wrap.open .pdf-toggle-icon { transform: rotate(180deg); }
+    .pdf-embed-wrap.open .pdf-toggle-label-closed { display: none; }
+    .pdf-embed-wrap:not(.open) .pdf-toggle-label-open { display: none; }
+    .pdf-embed-panel {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.4s ease, margin-top 0.4s ease;
+    }
+    .pdf-embed-wrap.open .pdf-embed-panel {
+      max-height: 760px;
+      opacity: 1;
+      margin-top: 1.25rem;
+    }
+    .pdf-embed-wrap .cs-block-label { margin-bottom: 0.75rem; }
+    .pdf-embed {
+      width: 100%;
+      height: 680px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      display: block;
+      background: var(--cream-dark);
+    }
+
+    /* ─── EXPERIENCE ACCORDION (creative drill-down for sidebar stats) ── */
+    .exp-accordion {
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .exp-row { border-bottom: 1px solid var(--border); }
+    .exp-row:last-child { border-bottom: none; }
+    .exp-row-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      padding: 1rem 0;
+      font: inherit;
+      color: inherit;
+    }
+    .exp-key {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+    .exp-val-wrap { display: flex; align-items: center; gap: 0.65rem; }
+    .exp-val {
+      font-family: 'Italiana', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--heading);
+      line-height: 1.1;
+      text-align: right;
+    }
+    .exp-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+      font-size: 0.78rem;
+      line-height: 1;
+      transition: transform 0.3s ease, background 0.2s ease, color 0.2s ease;
+      flex-shrink: 0;
+    }
+    .exp-row.open .exp-row-head { padding-bottom: 0.5rem; }
+    .exp-row.open .exp-icon {
+      transform: rotate(135deg);
+      background: var(--navy);
+      color: var(--white);
+    }
+    .exp-panel {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.45s ease, opacity 0.35s ease, padding-bottom 0.35s ease;
+    }
+    .exp-row.open .exp-panel {
+      max-height: 240px;
+      opacity: 1;
+      padding-bottom: 1.15rem;
+    }
+    .exp-detail {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--text);
+      max-width: 36ch;
+    }
+
+    /* ─── OTHER WORK ─────────────────────────────────────────── */
+    #other-work {
+      background: var(--cream);
+      padding: 7rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .other-work-inner { max-width: 1200px; margin: 0 auto; }
+    .other-work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .other-work-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.75rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .other-work-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(42,37,33,0.1); }
+    .other-work-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+    .other-work-title {
+      font-family: 'Italiana', serif;
+      font-size: 1.3rem;
+      color: var(--heading);
+      line-height: 1.2;
+    }
+    .other-work-desc {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .other-work-cta {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    /* ─── CONTACT ────────────────────────────────────────────── */
+    #contact {
+      background: var(--cream-dark);
+      padding: 7rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .contact-inner { max-width: 600px; margin: 0 auto; }
+    .contact-heading {
+      font-family: 'Italiana', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      color: var(--heading);
+      margin-bottom: 1.25rem;
+      line-height: 1.1;
+    }
+    .contact-body {
+      font-size: 0.975rem;
+      line-height: 1.75;
+      color: var(--text-light);
+      margin-bottom: 2.5rem;
+    }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: var(--heading);
+      padding: 1.75rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .footer-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+    }
+    .footer-note {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── FADE-UP ANIMATIONS ─────────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr 300px; gap: 3rem; }
+      .about-inner { grid-template-columns: 240px 1fr; gap: 3rem; }
+      .skill-row { grid-template-columns: 220px 1fr; gap: 1.75rem; }
+      .stats-row { grid-template-columns: repeat(3, 1fr); gap: 2rem 0; }
+      .stat-item:nth-child(3) { border-right: none; }
+      .stat-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; }
+      .stat-item:nth-child(5) { border-top: 1px solid rgba(255,255,255,0.1); border-right: none; padding-top: 2rem; }
+      .cs-body { grid-template-columns: 1fr; }
+      .cs-sidebar { position: static; }
+    }
+
+    @media (max-width: 768px) {
+      #hero { padding: 3.5rem 1.5rem; min-height: auto; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-photo-wrap { order: -1; max-width: 220px; margin: 0 auto; }
+      .hero-photo-caption { text-align: center; margin-left: 0; }
+      #about { padding: 5rem 1.5rem; }
+      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-sticky { position: static; }
+      #skills { padding: 5rem 1.5rem; }
+      .skill-row { grid-template-columns: 1fr; gap: 1rem; padding: 2rem 0; }
+      .skill-row-head { gap: 0.85rem; }
+      .skill-index { padding-top: 0.4rem; }
+      #work { padding: 5rem 1.5rem; }
+      .work-grid { grid-template-columns: 1fr; }
+      #results { padding: 4rem 1.5rem; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); gap: 2.5rem 0; }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; }
+      .stat-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; }
+      .stat-item:nth-child(5) { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; }
+      .case-study { padding: 5rem 1.5rem; }
+      .cs-visuals { grid-template-columns: 1fr; }
+      .cs-img-cell.span2 { grid-column: span 1; }
+      .cs-img-cell.ratio-wide { aspect-ratio: 16/9; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-resume.desktop-only { display: none; }
+      #contact { padding: 5rem 1.5rem; }
+      .contact-links { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══════════════════════════════════════════════ -->
+<nav id="site-nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Brooke Hogan</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="Brooke_Hogan_Resume.pdf" download class="nav-resume desktop-only">Resume</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile-menu" id="mobile-menu">
+    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#skills" class="mobile-nav-link">Skills</a>
+    <a href="#work" class="mobile-nav-link">Work</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+    <a href="Brooke_Hogan_Resume.pdf" download class="nav-resume">Resume</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ══════════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-content fade-up">
+      <p class="hero-eyebrow">Portfolio</p>
+      <h1 class="hero-name">Brooke<br>Hogan</h1>
+
+      <div class="hero-ctas">
+        <a href="#work" class="btn-primary">View My Work</a>
+        <a href="Brooke_Hogan_Resume.pdf" download class="btn-secondary">Download Resume</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat-item">
+          <div class="hero-stat-number">172K</div>
+          <p class="hero-stat-desc">Views across a 12-day Instagram takeover</p>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-number">$13K+</div>
+          <p class="hero-stat-desc">Generated in weekly sales during Sales &amp; Management internship</p>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-number">100%</div>
+          <p class="hero-stat-desc">Tester alignment on A/B-tested design decisions</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap fade-up" style="transition-delay:0.15s">
+      <div class="hero-photo-frame">
+        <img src="images/headshot.png" alt="Brooke Hogan" class="hero-photo">
+      </div>
+      <p class="hero-photo-caption">Dallas, TX</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ══════════════════════════════════════════════════════ -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-sticky fade-up">
+      <h2 class="section-heading">A little<br>about me</h2>
+    </div>
+    <div class="fade-up" style="transition-delay:0.1s">
+      <div class="about-body">
+        <p>I'm a recent Baylor University graduate with a degree in Apparel Merchandising, with hands-on retail experience from an internship at The Buckle, plus retail roles at Nordstrom and Follett's Baylor Bookstore.</p>
+        <p>I'm looking for roles in marketing, merchandising, or brand strategy, where I can put that retail background to work, planning content, analyzing what sells and why, and helping a brand connect with the people actually buying from it.</p>
+      </div>
+      <div class="about-details">
+        <div class="detail-row">
+          <span class="detail-label">Degree</span>
+          <span class="detail-value">Bachelor of Science in Apparel Merchandising, Baylor University</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Minor</span>
+          <span class="detail-value">Entrepreneurship &amp; Corporate Innovation</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Honors</span>
+          <span class="detail-value">Dean's List: Spring 2025, Fall 2024</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Location</span>
+          <span class="detail-value">Dallas, TX. Open to hybrid and in-person roles.</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">LinkedIn</span>
+          <span class="detail-value"><a href="https://linkedin.com/in/brookechogan" target="_blank" rel="noopener" style="color:var(--navy)">linkedin.com/in/brookechogan</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═════════════════════════════════════════════════════ -->
+<section id="skills">
+  <div class="skills-inner">
+    <div class="fade-up">
+      <h2 class="section-heading">What I Bring to a Team</h2>
+    </div>
+    <div class="skills-list fade-up" style="transition-delay:0.1s">
+      <div class="skill-row">
+        <div class="skill-row-head">
+          <span class="skill-index">01</span>
+          <div class="skill-row-title-wrap">
+            <h3 class="skill-row-title">Planning &amp; Coordination</h3>
+            <div class="skill-row-accent"></div>
+          </div>
+        </div>
+        <div class="skill-items">
+          <span class="skill-item">Content calendars</span>
+          <span class="skill-item">Partner outreach</span>
+          <span class="skill-item">Event planning</span>
+          <span class="skill-item">Operational setup</span>
+          <span class="skill-item">Performance tracking</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row-head">
+          <span class="skill-index">02</span>
+          <div class="skill-row-title-wrap">
+            <h3 class="skill-row-title">Content &amp; Social</h3>
+            <div class="skill-row-accent"></div>
+          </div>
+        </div>
+        <div class="skill-items">
+          <span class="skill-item">Social media strategy</span>
+          <span class="skill-item">Content scheduling</span>
+          <span class="skill-item">Instagram Insights</span>
+          <span class="skill-item">Canva design</span>
+          <span class="skill-item">Brand-consistent content</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row-head">
+          <span class="skill-index">03</span>
+          <div class="skill-row-title-wrap">
+            <h3 class="skill-row-title">Retail Analysis</h3>
+            <div class="skill-row-accent"></div>
+          </div>
+        </div>
+        <div class="skill-items">
+          <span class="skill-item">Six-month buy planning</span>
+          <span class="skill-item">Inventory allocation</span>
+          <span class="skill-item">Sell-through analysis</span>
+          <span class="skill-item">Sourcing comparisons</span>
+          <span class="skill-item">Competitive analysis</span>
+          <span class="skill-item">SKU planning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURED WORK ══════════════════════════════════════════════ -->
+<section id="work">
+  <div class="work-inner">
+    <div class="work-heading-row fade-up">
+      <h2 class="section-heading">My Work</h2>
+    </div>
+    <div class="work-grid fade-up" style="transition-delay:0.1s">
+
+      <!-- Card 1 -->
+      <a href="#cs-social" class="project-card">
+        <div class="card-img-wrap">
+          <img src="images/social-cover.png" alt="Social Media Takeover">
+        </div>
+        <div class="card-body">
+          <p class="card-category">Social Media &amp; Content</p>
+          <h3 class="card-title">12-Day Social Media Takeover</h3>
+          <p class="card-summary">Owned the schedule, partner outreach, and daily tracking for a Baylor fashion Instagram account, working alongside a three-person team and local brand partners.</p>
+          <span class="card-cta">View Case Study &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="#cs-fivebelow" class="project-card">
+        <div class="card-img-wrap">
+          <img src="images/fivebelow-cover.png" alt="Five Below Retail Analysis">
+        </div>
+        <div class="card-body">
+          <p class="card-category">Retail Analysis &amp; Buying</p>
+          <h3 class="card-title">Five Below Beauty &amp; Style Analysis</h3>
+          <p class="card-summary">Retail health analysis identifying sourcing savings, competitive positioning, and a subcategory-level inventory allocation for 51 NYC locations.</p>
+          <span class="card-cta">View Case Study &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="#cs-ruth" class="project-card">
+        <div class="card-img-wrap">
+          <img src="images/ruth-cover.png" alt="Ruth and Naomi Digital Redesign">
+        </div>
+        <div class="card-body">
+          <p class="card-category">Digital Merchandising</p>
+          <h3 class="card-title">Ruth &amp; Naomi Digital Redesign</h3>
+          <p class="card-summary">Reworked a boutique brand's web and mobile experience end to end, putting every major decision through A/B testing with real users before it shipped.</p>
+          <div style="display:none">
+          </div>
+          <span class="card-cta">View Case Study &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="#cs-aps" class="project-card">
+        <div class="card-img-wrap">
+          <img src="images/aps-cover.png" alt="Apparel Professionals Club">
+        </div>
+        <div class="card-body">
+          <p class="card-category">Event Planning</p>
+          <h3 class="card-title">Apparel Professionals Club Launch</h3>
+          <p class="card-summary">Built and executed the founding interest meeting for Baylor's first student-run fashion community, including org structure, blog platform, and all operational infrastructure.</p>
+          <span class="card-cta">View Case Study &rarr;</span>
+        </div>
+      </a>
+
+      <a href="#cs-buckle" class="project-card project-card-feature">
+        <div class="card-img-wrap">
+          <img src="images/buckle-title-slide-v2.png" alt="Internship Experience at Buckle, Summer 2025">
+        </div>
+        <div class="card-body">
+          <p class="card-category">In-Store Retail</p>
+          <h3 class="card-title">Buckle Internship</h3>
+          <p class="card-summary">A summer on the floor at The Buckle, the kind of retail education you can only get from a register, a fitting room, and a Saturday rush.</p>
+          <span class="card-cta">View Case Study &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="skills-list fade-up" style="transition-delay:0.1s;margin-top:3rem;">
+      <div class="skill-row">
+        <div class="skill-row-head">
+          <span class="skill-index">+</span>
+          <div class="skill-row-title-wrap">
+            <h3 class="skill-row-title">Tools &amp; Platforms</h3>
+            <div class="skill-row-accent"></div>
+          </div>
+        </div>
+        <div class="skill-items">
+          <span class="skill-item tool"><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" class="tool-logo" alt="">Google Suite</span>
+          <span class="skill-item tool-dropdown">
+            <button class="tool-dropdown-toggle" type="button" aria-expanded="false">
+              <img src="https://www.google.com/s2/favicons?domain=microsoft.com&sz=32" class="tool-logo" alt="">Microsoft Office
+              <span class="tool-dropdown-caret">&#9662;</span>
+            </button>
+            <div class="tool-dropdown-panel">
+              <span class="tool-dropdown-item"><img src="https://www.google.com/s2/favicons?domain=excel.cloud.microsoft&sz=32" class="tool-logo" alt="">Excel</span>
+              <span class="tool-dropdown-item"><img src="https://www.google.com/s2/favicons?domain=word.cloud.microsoft&sz=32" class="tool-logo" alt="">Word</span>
+              <span class="tool-dropdown-item"><img src="https://www.google.com/s2/favicons?domain=powerpoint.cloud.microsoft&sz=32" class="tool-logo" alt="">PowerPoint</span>
+              <span class="tool-dropdown-item"><img src="https://www.google.com/s2/favicons?domain=outlook.office.com&sz=32" class="tool-logo" alt="">Outlook</span>
+            </div>
+          </span>
+          <span class="skill-item tool"><img src="https://www.google.com/s2/favicons?domain=canva.com&sz=32" class="tool-logo" alt="">Canva</span>
+          <span class="skill-item tool"><img src="https://www.google.com/s2/favicons?domain=wix.com&sz=32" class="tool-logo" alt="">Wix</span>
+          <span class="skill-item tool-dropdown">
+            <button class="tool-dropdown-toggle" type="button" aria-expanded="false">
+              <img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=32" class="tool-logo" alt="">Claude
+              <span class="tool-dropdown-caret">&#9662;</span>
+            </button>
+            <div class="tool-dropdown-panel">
+              <span class="tool-dropdown-item"><img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=32" class="tool-logo" alt="">Cowork</span>
+              <span class="tool-dropdown-item"><img src="https://www.google.com/s2/favicons?domain=claude.com&sz=32" class="tool-logo" alt="">Code</span>
+            </div>
+          </span>
+          <span class="skill-item tool"><img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=32" class="tool-logo" alt="">Perplexity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- CASE STUDIES                                                    -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<!-- CS 1: Social Media Takeover -->
+<div id="cs-social" class="case-study">
+  <div class="cs-inner">
+    <div class="fade-up">
+      <p class="cs-category">Social Media &amp; Content</p>
+      <h2 class="cs-headline">Twelve days running the Instagram takeover for <a href="https://www.instagram.com/baylorfashion/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">@baylorfashion</a>.</h2>
+      <div class="cs-meta">
+        <div class="cs-meta-item"><p class="cs-meta-label">Team</p><p class="cs-meta-value">3-Person Student Team</p></div>
+        <div class="cs-meta-item"><p class="cs-meta-label">Tools</p><p class="cs-meta-value">Instagram, Canva, Instagram Insights</p></div>
+      </div>
+    </div>
+
+    <div class="cs-hero-img-wrap fade-up">
+      <img src="images/social-cover.png" alt="Social Media Takeover cover slide">
+    </div>
+
+    <div class="cs-body">
+      <div class="cs-main">
+        <div class="cs-text-block fade-up">
+          <p class="cs-block-label">Process</p>
+          <p class="cs-block-text">I owned the schedule, the partner outreach, and the daily tracking, which meant I knew by day three which content types were pulling their weight and which weren't. Twelve days of real numbers, then a debrief that said plainly what worked and what didn't.</p>
+        </div>
+        <div class="cs-text-block fade-up">
+          <p class="cs-block-label">Takeaway</p>
+          <p class="cs-block-text">Pre-scheduled days held together. Reactive days didn't.</p>
+        </div>
+
+        <!-- Visuals: Reels full-width, Story + Successes 2-up -->
+        <div class="cs-visuals fade-up">
+          <div class="cs-img-cell ratio-16-9 span2">
+            <img src="images/social-reels.png" alt="Reels Performance Grid">
+          </div>
+          <div class="cs-img-cell ratio-16-9">
+            <img src="images/social-story.png" alt="Celebrity Story Stats">
+          </div>
+          <div class="cs-img-cell ratio-16-9">
+            <img src="images/social-successes.png" alt="Overall Successes">
+          </div>
+        </div>
+        <div class="pdf-embed-wrap fade-up">
+          <button class="pdf-toggle" type="button" aria-expanded="false">
+            <span class="pdf-toggle-label-closed">View Full Presentation</span>
+            <span class="pdf-toggle-label-open">Hide Presentation</span>
+            <span class="pdf-toggle-icon">&#9662;</span>
+          </button>
+          <div class="pdf-embed-panel">
+            <p class="cs-block-label">Full Presentation</p>
+            <iframe src="https://drive.google.com/file/d/16hFOgw0EhaQaV0BJigLgQramgpHJ9Dfd/preview" class="pdf-embed" title="Social Media Takeover Presentation" allow="autoplay"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-sidebar">
+        <div class="results-box fade-up">
+          <h4 class="results-box-title">Results</h4>
+          <div class="result-row"><span class="r-key">Total Views</span><span class="r-val">172,761</span></div>
+          <div class="result-row"><span class="r-key">Total Interactions</span><span class="r-val">1,557</span></div>
+          <div class="result-row"><span class="r-key">Top Reel</span><span class="r-val">4,216 views</span></div>
+          <div class="result-row"><span class="r-key">Top Story</span><span class="r-val">6,834 views</span></div>
+          <div class="result-row"><span class="r-key">High-Performing Reels</span><span class="r-val">6 (155+ interactions each)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CS 2: Five Below -->
+<div id="cs-fivebelow" class="case-study">
+  <div class="cs-inner">
+    <div class="cs-header-row">
+      <div class="fade-up cs-header-text">
+        <p class="cs-category">Retail Analysis &amp; Buying</p>
+        <h2 class="cs-headline">Building a six-month buying plan for Five Below's Beauty &amp; Style department.</h2>
+        <div class="cs-meta">
+          <div class="cs-meta-item"><p class="cs-meta-label">Type</p><p class="cs-meta-value">Retail Health Analysis</p></div>
+          <div class="cs-meta-item"><p class="cs-meta-label">Market</p><p class="cs-meta-value">NYC, 51 Locations</p></div>
+          <div class="cs-meta-item"><p class="cs-meta-label">Category</p><p class="cs-meta-value">Beauty &amp; Style</p></div>
+          <div class="cs-meta-item"><p class="cs-meta-label">Tools</p><p class="cs-meta-value">Retail Trend Research, Category Analysis</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-hero-img-wrap fade-up">
+      <img src="images/fivebelow-cover.png" alt="Five Below Analysis cover slide">
+    </div>
+
+    <div class="cs-body">
+      <div class="cs-main">
+        <div class="cs-text-block fade-up">
+          <p class="cs-block-label">Process</p>
+          <p class="cs-block-text">I compared Five Below against Dollar General and Dollar Tree, then identified a $0.40 per unit sourcing savings between Singapore and China. Not a rounding error at Five Below's volume. I built a subcategory allocation plan with specific percentage splits based on trend data and sales performance.</p>
+        </div>
+        <div class="cs-text-block fade-up">
+          <p class="cs-block-label">Takeaway</p>
+          <p class="cs-block-text">Retail decisions that look like taste or intuition usually have data behind them.</p>
+        </div>
+
+        <!-- Visuals: Six Month Plan full-width, Distribution + Breadth 2-up -->
+        <div class="cs-visuals fade-up">
+          <div class="cs-img-cell ratio-16-9 span2">
+            <img src="images/fivebelow-6month.png" alt="Six Month Plan">
+          </div>
+          <div class="cs-img-cell ratio-16-9">
+            <img src="images/fivebelow-distribution.png" alt="Monthly Sales Distribution">
+          </div>
+          <div class="cs-img-cell ratio-16-9">
+            <img src="images/fivebelow-breadth.png" alt="Breadth and Depth SKU Breakdown">
+          </div>
+        </div>
+        <div class="pdf-embed-wrap fade-up">
+          <button class="pdf-toggle" type="button" aria-expanded="false">
+            <span class="pdf-toggle-label-closed">View Full Presentation</span>
+            <span class="pdf-toggle-label-open">Hide Presentation</span>
+            <span class="pdf-toggle-icon">&#9662;</span>
+          </button>
+          <div class="pdf-embed-panel">
+            <p class="cs-block-label">Full Presentation</p>
+            <iframe src="five-below-analysis.pdf" class="pdf-embed" title="Five Below Retail Health Analysis"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-sidebar">
+        <div class="results-box fade-up">
+          <h4 class="results-box-title">Key Findings</h4>
+          <div class="result-row"><span class="r-key">Sourcing savings</span><span class="r-val">$0.40/unit ($400K per 1M units)</span></div>
+          <div class="result-row"><span class="r-key">Makeup allocation</span><span class="r-val">35%</span></div>
+          <div class="result-row"><span class="r-key">Skincare allocation</span><span class="r-val">30%</span></div>
+          <div class="result-row"><span class="r-key">Category growth vs. avg</span><span class="r-val">+10 to 12 pts annually</span></div>
+          <div class="result-row"><span class="r-key">NYC locations isolated</span><span class="r-val">51</span></div>
+          <div class="result-row"><span class="r-key">Competitors compared</span><span class="r-val">9 factors</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CS 3: Ruth & Naomi -->
+<div id="cs-ruth" class="case-study">
+  <div class="cs-inner">
+    <div class="fade-up">
+      <p class="cs-category">Digital Merchandising</p>
+      <h2 class="cs-headline">Redesigning web and mobile for a tween and teen fashion boutique, tested with real users.</h2>
+      <div class="cs-meta">
+        <div class="cs-meta-item"><p class="cs-meta-label">Type</p><p class="cs-meta-value">Omnichannel Redesign</p></div>
+        <div class="cs-meta-item"><p class="cs-meta-label">Platforms</p><p class="cs-meta-value">Web (Wix) + Mobile App (Good Barber)</p></div>
+        <div class="cs-meta-item"><p class="cs-meta-label">My Role</p><p class="cs-meta-value">Web Coordinator</p></div>
+        <div class="cs-meta-item"><p class="cs-meta-label">Tools</p><p class="cs-meta-value">Wix, Google Forms, In-Person Interviews</p></div>
+      </div>
+    </div>
+
+    <div class="cs-hero-img-wrap fade-up">
+      <img src="images/ruth-cover.png" alt="Ruth and Naomi brand project cover">
+    </div>
+
+    <div class="cs-body">
+      <div class="cs-main">
+        <div class="cs-text-block fade-up">
+          <p class="cs-block-label">Process</p>
+          <p class="cs-block-text">I owned the Wix website redesign: seven navigation categories, a product filter system and item pages with size, fabric and add-to-cart. Then I built a Google Form A/B test for both platforms and ran in-person interviews with real users. Option A for the website. Option B for the app.</p>
+        </div>
+        <div class="cs-text-block fade-up">
+          <p class="cs-block-label">Takeaway</p>
+          <p class="cs-block-text">The test changed at least one decision I was confident about. That's why you test before you commit.</p>
+        </div>
+
+        <!-- Visuals: Web wireframe full-width (very wide), App + Prototype 2-up -->
+        <div class="cs-visuals fade-up">
+          <div class="cs-img-cell ratio-wide span2">
+            <img src="images/ruth-web.png" alt="Website wireframe">
+          </div>
+          <div class="cs-img-cell ratio-sq">
+            <img src="images/ruth-app.png" alt="App wireframe">
+          </div>
+          <div class="cs-img-cell ratio-16-9">
+            <img src="images/ruth-prototype.png" alt="Web prototype product page">
+          </div>
+        </div>
+        <div class="pdf-embed-wrap fade-up">
+          <button class="pdf-toggle" type="button" aria-expanded="false">
+            <span class="pdf-toggle-label-closed">View Full Presentation</span>
+            <span class="pdf-toggle-label-open">Hide Presentation</span>
+            <span class="pdf-toggle-icon">&#9662;</span>
+          </button>
+          <div class="pdf-embed-panel">
+            <p class="cs-block-label">Full Presentation</p>
+            <iframe src="ruth-naomi-brand-campaign.pdf" class="pdf-embed" title="Ruth and Naomi Brand Campaign Presentation"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-sidebar">
+        <div class="results-box fade-up">
+          <h4 class="results-box-title">Results</h4>
+          <div class="result-row"><span class="r-key">Website result</span><span class="r-val">Option A preferred</span></div>
+          <div class="result-row"><span class="r-key">App result</span><span class="r-val">Option B preferred</span></div>
+          <div class="result-row"><span class="r-key">Tester alignment</span><span class="r-val">100% on all decisions</span></div>
+          <div class="result-row"><span class="r-key">Platforms redesigned</span><span class="r-val">Web + Mobile App</span></div>
+          <div class="result-row"><span class="r-key">Nav categories</span><span class="r-val">7 main + subcategories</span></div>
+          <div class="result-row"><span class="r-key">Filter dimensions</span><span class="r-val">Category, price, color, size</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CS 4: Apparel Professionals -->
+<div id="cs-aps" class="case-study">
+  <div class="cs-inner">
+    <div class="fade-up">
+      <p class="cs-category">Event Planning</p>
+      <h2 class="cs-headline">Revived Baylor's student fashion community and rebuilt its operations from scratch.</h2>
+      <div class="cs-meta">
+        <div class="cs-meta-item"><p class="cs-meta-label">Type</p><p class="cs-meta-value">Club Launch + Event Production</p></div>
+        <div class="cs-meta-item"><p class="cs-meta-label">My Role</p><p class="cs-meta-value">Head Chair, Event Planning</p></div>
+        <div class="cs-meta-item"><p class="cs-meta-label">Scope</p><p class="cs-meta-value">Baylor University</p></div>
+        <div class="cs-meta-item"><p class="cs-meta-label">Tools</p><p class="cs-meta-value">Canva, Google Forms, Gmail, Venmo, GroupMe</p></div>
+      </div>
+    </div>
+
+    <div class="cs-hero-img-wrap fade-up">
+      <img src="images/aps-cover.png" alt="Apparel Professionals Club cover slide">
+    </div>
+
+    <div class="cs-body">
+      <div class="cs-main">
+        <div class="cs-text-block fade-up">
+          <p class="cs-block-label">Process</p>
+          <p class="cs-block-text">The community had gone dormant, so as Events Coordinator on the relaunch e-board, I rebuilt it from the ground up: a new interest meeting presentation, and every operational system the group needed to function again, forms, GroupMe, Venmo, Gmail and The Baylor Edit blog with a four-step contributor workflow.</p>
+        </div>
+        <div class="cs-text-block fade-up">
+          <p class="cs-block-label">Takeaway</p>
+          <p class="cs-block-text">You have to hand people a path to get involved before they leave the room.</p>
+        </div>
+
+        <!-- Visuals: 2x2 grid of all four APS slides -->
+        <div class="cs-visuals fade-up">
+          <div class="cs-img-cell ratio-16-9">
+            <img src="images/aps-about.png" alt="About Apparel Professionals">
+          </div>
+          <div class="cs-img-cell ratio-16-9">
+            <img src="images/aps-eboard.png" alt="Meet the Board">
+          </div>
+          <div class="cs-img-cell ratio-16-9">
+            <img src="images/aps-baylor-edit.png" alt="The Baylor Edit">
+          </div>
+          <div class="cs-img-cell ratio-16-9">
+            <img src="images/aps-events.png" alt="Events Calendar">
+          </div>
+        </div>
+        <div class="pdf-embed-wrap fade-up">
+          <button class="pdf-toggle" type="button" aria-expanded="false">
+            <span class="pdf-toggle-label-closed">View Full Presentation</span>
+            <span class="pdf-toggle-label-open">Hide Presentation</span>
+            <span class="pdf-toggle-icon">&#9662;</span>
+          </button>
+          <div class="pdf-embed-panel">
+            <p class="cs-block-label">Full Presentation</p>
+            <iframe src="aps-interest-meeting.pdf" class="pdf-embed" title="Apparel Professionals Interest Meeting Deck"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-sidebar">
+        <div class="results-box fade-up">
+          <h4 class="results-box-title">Results</h4>
+          <div class="result-row"><span class="r-key">Organization built</span><span class="r-val">Full structure, from zero</span></div>
+          <div class="result-row"><span class="r-key">Blog launched</span><span class="r-val">The Baylor Edit (5 categories)</span></div>
+          <div class="result-row"><span class="r-key">Board pipeline</span><span class="r-val">Application process live on day one</span></div>
+          <div class="result-row"><span class="r-key">Infrastructure</span><span class="r-val">Forms, GroupMe, Venmo, Gmail</span></div>
+          <div class="result-row"><span class="r-key">Events per year</span><span class="r-val">10+ as Head Chair</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CS 5: Buckle Internship -->
+<div id="cs-buckle" class="case-study">
+  <div class="cs-inner">
+    <div class="fade-up">
+      <p class="cs-category">In-Store Retail</p>
+      <h2 class="cs-headline">240+ hours of retail management training at The Buckle.</h2>
+      <div class="cs-meta">
+        <div class="cs-meta-item"><p class="cs-meta-label">Type</p><p class="cs-meta-value">Internship</p></div>
+        <div class="cs-meta-item"><p class="cs-meta-label">Employer</p><p class="cs-meta-value">The Buckle</p></div>
+        <div class="cs-meta-item"><p class="cs-meta-label">Focus</p><p class="cs-meta-value">Retail Sales &amp; Operations</p></div>
+      </div>
+    </div>
+
+    <div class="cs-body">
+      <div class="cs-main">
+        <div class="cs-text-block fade-up">
+          <p class="cs-block-label">Experience</p>
+          <p class="cs-block-text">One summer, one sales floor. I worked customer engagement, product knowledge, merchandising and the daily mechanics that keep a store running. Most of it was repetition. The kind that teaches you to read a room before a customer says a word.</p>
+        </div>
+        <div class="cs-text-block fade-up">
+          <p class="cs-block-label">Takeaway</p>
+          <p class="cs-block-text">Understanding how customers actually move through a store and respond to product placement changed how I think about digital merchandising. It's also where I learned to sell a whole outfit instead of a single item, pulling pieces from different categories so the customer leaves with a complete look, not just the thing they walked in for.</p>
+        </div>
+
+        <!-- Visuals: title slide + positive experiences recap -->
+        <div class="cs-visuals fade-up">
+          <div class="cs-img-cell ratio-16-9">
+            <img src="images/buckle-title-slide-v2.png" alt="Internship Experience at Buckle, Summer 2025 title slide">
+          </div>
+          <div class="cs-img-cell ratio-16-9">
+            <img src="images/buckle-positive-experiences.png" alt="Positive Experiences slide: presenting the project to other stores, helping guests find their fit, watching guests walk out feeling confident, seeing visual suggestions reach the floor, and being recognized for top sales performance">
+          </div>
+        </div>
+
+        <div class="pdf-embed-wrap fade-up">
+          <button class="pdf-toggle" type="button" aria-expanded="false">
+            <span class="pdf-toggle-label-closed">View Full Presentation</span>
+            <span class="pdf-toggle-label-open">Hide Presentation</span>
+            <span class="pdf-toggle-icon">&#9662;</span>
+          </button>
+          <div class="pdf-embed-panel">
+            <p class="cs-block-label">Full Presentation</p>
+            <iframe src="buckle-internship.pdf" class="pdf-embed" title="Buckle Internship Presentation"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-sidebar">
+        <div class="exp-accordion fade-up">
+          <h4 class="results-box-title">Experience</h4>
+
+          <div class="exp-row">
+            <button class="exp-row-head" type="button" aria-expanded="false">
+              <span class="exp-key">Training hours</span>
+              <span class="exp-val-wrap"><span class="exp-val">240+</span><span class="exp-icon">+</span></span>
+            </button>
+            <div class="exp-panel">
+              <p class="exp-detail">Enough time on the sales floor to stop guessing when a Saturday rush was coming and start feeling it before it hit.</p>
+            </div>
+          </div>
+
+          <div class="exp-row">
+            <button class="exp-row-head" type="button" aria-expanded="false">
+              <span class="exp-key">Employer</span>
+              <span class="exp-val-wrap"><span class="exp-val">The Buckle</span><span class="exp-icon">+</span></span>
+            </button>
+            <div class="exp-panel">
+              <p class="exp-detail">The Buckle is a specialty apparel retailer built on relationship selling, where regulars expect you to remember their size and what they bought last visit.</p>
+            </div>
+          </div>
+
+          <div class="exp-row">
+            <button class="exp-row-head" type="button" aria-expanded="false">
+              <span class="exp-key">Focus areas</span>
+              <span class="exp-val-wrap"><span class="exp-val">Sales, Merchandising, Ops</span><span class="exp-icon">+</span></span>
+            </button>
+            <div class="exp-panel">
+              <p class="exp-detail">Customer engagement, visual merchandising, and the floor mechanics that keep a store running: stock flow, fitting rooms, recovery, register.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OTHER WORK ════════════════════════════════════════════════ -->
+<section id="other-work">
+  <div class="other-work-inner">
+    <div class="fade-up">
+      <h2 class="section-heading">Other Projects</h2>
+    </div>
+    <div class="other-work-grid fade-up" style="transition-delay:0.1s">
+      <a href="consumer-profile.pdf" target="_blank" class="other-work-card">
+        <p class="other-work-label">Consumer Research</p>
+        <h3 class="other-work-title">Consumer Profile Project</h3>
+        <span class="other-work-cta">View PDF &rarr;</span>
+      </a>
+      <a href="opi-assortment.pdf" target="_blank" class="other-work-card">
+        <p class="other-work-label">Retail Assortment Planning</p>
+        <h3 class="other-work-title">OPI Nail Polish Assortment Analysis</h3>
+        <span class="other-work-cta">View PDF &rarr;</span>
+      </a>
+      <a href="baleaf-analysis.pdf" target="_blank" class="other-work-card">
+        <p class="other-work-label">Competitive Analysis</p>
+        <h3 class="other-work-title">Baleaf Competitive Product Analysis</h3>
+        <span class="other-work-cta">View PDF &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ════════════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-inner fade-up">
+    <h2 class="contact-heading">Let's Connect</h2>
+    <div class="contact-links">
+      <a href="mailto:brooke@jackhogan.com" class="btn-primary">brooke@jackhogan.com</a>
+      <a href="https://linkedin.com/in/brookechogan" target="_blank" rel="noopener" class="btn-secondary">LinkedIn</a>
+      <a href="Brooke_Hogan_Resume.pdf" download class="btn-secondary">Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Brooke Hogan</span>
+    <span class="footer-note">Dallas, TX &nbsp;·&nbsp; Open to Hybrid &amp; In-Person</span>
+  </div>
+</footer>
+
+<!-- ═══ SCRIPTS ════════════════════════════════════════════════════ -->
+<script>
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Nav shadow on scroll
+  const nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 10
+      ? '0 1px 16px rgba(42,37,33,0.08)'
+      : 'none';
+  }, { passive: true });
+
+  // Mobile hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+    });
+  });
+
+  // PDF embed toggle (View Full Presentation)
+  document.querySelectorAll('.pdf-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const wrap = btn.closest('.pdf-embed-wrap');
+      const open = wrap.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      if (!open) {
+        const top = wrap.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  document.querySelectorAll('.exp-row-head').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const row = btn.closest('.exp-row');
+      const open = row.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+  });
+
+  // Tool dropdown (e.g. Microsoft Office → Excel, Word, PowerPoint, Outlook)
+  document.querySelectorAll('.tool-dropdown-toggle').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wrap = btn.closest('.tool-dropdown');
+      const willOpen = !wrap.classList.contains('open');
+      document.querySelectorAll('.tool-dropdown.open').forEach(w => {
+        w.classList.remove('open');
+        w.querySelector('.tool-dropdown-toggle').setAttribute('aria-expanded', false);
+      });
+      if (willOpen) {
+        wrap.classList.add('open');
+        btn.setAttribute('aria-expanded', true);
+      }
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.tool-dropdown.open').forEach(w => {
+      w.classList.remove('open');
+      w.querySelector('.tool-dropdown-toggle').setAttribute('aria-expanded', false);
+    });
+  });
+</script>
+
+
+</body>
+</html>
